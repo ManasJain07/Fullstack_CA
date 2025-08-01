@@ -1,84 +1,138 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>My Web Page</title>
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Layout with Sidebar and Boxes Below Main</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar {
+      background-color: #031322;
+      color: white;
+      padding: 0rem;
+      text-align: center;
+      font-size: 1.5rem;
+      margin: 5px;
+      height: 80px;
+    }
+
+   
+    .layout {
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+    }
+
+    .sidebar {
+      
+      background-color: #df9306;
+      padding: 0rem;
+      color: white;
+      text-align: center;
+      width: 340px;
+      margin: 4px;
+      height: 515px;
+
+
+    }
+
+  
+    .content-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      gap: 1rem;
+    }
+
+    .main {
+      background-color: #bc0230;
+      padding: 0rem;
+      text-align: center;
+      color: white;
+      height: 330px;
+    margin: -12px;
+    }
+
+    .boxes {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      height: 170px;
+    }
+
+    .box {
+      flex: 1;
+      min-width: 200px;
+      background-color: #32764d;
+      padding: 0rem;
+      text-align: center;
+      color: white;
+      margin: -2px;
+    }
+
+    .footer {
+      background-color: #067290;
+      color: white;
+      padding: 0rem;
+      text-align: center;
+      height: 85px;
+    }
+
+   
+    @media (max-width: 768px) {
+      .layout {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+      }
+
+      .boxes {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
 <body>
 
-    <div class="navbar">
+
+  <header class="navbar">Navbar</header>
+
+  <div class="layout">
+
+ 
+    <aside class="sidebar">Sidebar</aside>
+
+   
+    <div class="content-area">
+  
+      <div class="main">Main Section</div>
+      
+    
+      <div class="boxes">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+      </div>
 
     </div>
-    <div class="parent">
-        <div class="sidebar">
-        </div>
-        <div class="main"></div>
-        <div class="box1"></div>
-        <div class="box2"></div>
-        <div class="footer">
-            <footer>
-                <p>Footer Content</p>
-            </footer>
-    </div>
-    <style>
-        .navbar {
-            background-color: #3bd4c0;
-            height: 100px;
-            width: 100%;
-        }
+  </div>
 
-        .parent {
-            background-color: #efc5c5;
-            height: 100vh;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            
-        }
+ 
+  <footer class="footer">Footer Content</footer>
 
-        .sidebar {
-            background-color: #76ad32;
-            height: 100vh;
-            width: 400px;
-            
-        }
-
-        .main {
-            background-color: #7d1e1e;
-            height: 500px;
-            width: 100%;
-            flex-direction: column;
-            justify-content:baseline;
-            align-items:center;
-
-        }
-
-        .box1 {
-            background-color: #1128aa;
-            height: 200px;
-            width: 100%;
-        }
-
-        .box2 {
-            background-color: #aa1128;
-            height: 200px;
-            width: 100%;
-        }
-
-        footer {
-            width: 100%;
-            height: 20%;
-            background-color: #000;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items:end;
-
-            background-color: blue;
-        }
-    </style>
 </body>
-
 </html>
